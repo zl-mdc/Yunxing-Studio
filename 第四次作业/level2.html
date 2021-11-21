@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            color:transparent;
+        }
+    </style>
+</head>
+<body>
+<!--对于下列列表：-->
+<!--● 实现点击不同的 li  能打印出所对应的内容（通过事件委托）-->
+<!--● 通过 js  设置 单数li背景颜色为红色 , 双数 li为绿色-->
+<ul class="father">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+</ul>
+<script>
+    const father = document.querySelector('.father')
+    const list =document.getElementsByTagName('li')
+    Array.from(list).forEach((item,index)=>{
+        if (item.innerHTML%2==0){
+            item.style.backgroundColor="green"
+        }else {
+            item.style.backgroundColor="red"
+        }
+    })
+    father.addEventListener('click',(e)=>{
+        console.log(e.target.innerHTML)
+    })
+</script>
+</body>
+</html>

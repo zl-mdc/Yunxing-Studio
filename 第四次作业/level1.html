@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+<button class="btnColor">点击更改背景颜色</button>
+<button class="btnFont">点击更改字体大小</button>
+<div class="size">
+    我爱学习前端！！！！！
+</div>
+    <script>
+        const btnColor =document.querySelector('.btnColor')
+        const btnFont = document.querySelector('.btnFont')
+        const size  =document.querySelector('.size')
+        btnColor.addEventListener('click',()=>{
+            document.body.style.backgroundColor = `rgb(${Math.random()*256},${Math.random()*256},${Math.random()*256})`
+        })
+        btnFont.addEventListener('click',()=>{
+            size.style.fontSize=`${Math.random()*25+10}px`
+        })
+    </script>
+</body>
+</html>

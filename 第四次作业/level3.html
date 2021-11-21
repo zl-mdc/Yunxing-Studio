@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--实现一个留言板-->
+<!--要求：在评论区输入留言，点击发布后，在留言板中能够插入新的留言，每一条留言旁有一个按钮可以删除该留言-->
+<textarea class="area"></textarea>
+<button class="btn">发布</button>
+<ul class="ul"></ul>
+<script>
+    const btn =document.querySelector('.btn')
+    const area= document.querySelector('.area')
+    const ul = document.querySelector('.ul')
+    btn.addEventListener('click',()=>{
+       let  inputValue = area.value
+        addMsg(inputValue)
+        area.value=''
+    })
+    function addMsg(inputValue){
+        const li = document.createElement('li')
+        li.innerHTML = `${inputValue}<button class="deleteBtn" >删除</button> `
+       li.addEventListener('click',removeMsg)
+        ul.appendChild(li)
+    }
+    function removeMsg(e){
+            ul.removeChild(e.target.parentNode)
+    }
+</script>
+</body>
+</html>
