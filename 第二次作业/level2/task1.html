@@ -13,39 +13,40 @@
     <script>
         let demo = prompt("请输入数字")
         let inputResult = parseInt(demo)
+        console.log(inputResult);
+
         function info(num) {
             let input;
             if (isNaN(num)) {
-               input= prompt("你输入的不是数字，请重新输入")
-               info(input)
+                input = prompt("你输入的不是数字，请重新输入")
+                info(input)
             } else {
                 let sum = num * num
                 alert(`你输入的数字平方后的结果为${sum}`)
-              
+
             }
         }
         info(inputResult)
     </script>
     <script>
+        // var arr = [{ name: 'xiaoming', age: 18 }, { name: 'zhangsan', age: 34 },
+        // { name: 'lisi', age: 29 }, { name: 'wangwu', age: 24 }];
 
-// var arr = [{ name: 'xiaoming', age: 18 }, { name: 'zhangsan', age: 34 },
-// { name: 'lisi', age: 29 }, { name: 'wangwu', age: 24 }];
-
-// function sortby(key, way = true) {//way为true表示默认按照升序排列
-//     return   a[key] < b[key] ? 1 : a < b ? -1 : 0
-//     // let res=[]
-//     // for (let i = 0; i < arr.length; i++) {
-//     //     const element = arr[i][key];
-//     //     res.push(element)
-//     // }
-//     // console.log(res.sort((a, b) => a > b ? 1 : a < b ? -1 : 0));
-//     // return function (a,b) {
-//     // //   console.log(a[key],b[key]);
-//     //   return   a[key] < b[key] ? 1 : a < b ? -1 : 0
-//     // }
-// }
-// console.log(arr.sort(sortby('age'))) //[{name: "xiaoming", age: 18},{name: "wangwu", age: 24},{name: "lisi", age: 29},{name: "zhangsan", age: 34}]
-// // console.log(arr.sort(sortby('name',false))) //[{name: "zhangsan", age: 34},{name: "xiaoming", age: 18},{name: "wangwu", age: 24},{name: "lisi", age: 29}]
+        // function sortby(key, way = true) {//way为true表示默认按照升序排列
+        //     return   a[key] < b[key] ? 1 : a < b ? -1 : 0
+        //     // let res=[]
+        //     // for (let i = 0; i < arr.length; i++) {
+        //     //     const element = arr[i][key];
+        //     //     res.push(element)
+        //     // }
+        //     // console.log(res.sort((a, b) => a > b ? 1 : a < b ? -1 : 0));
+        //     // return function (a,b) {
+        //     // //   console.log(a[key],b[key]);
+        //     //   return   a[key] < b[key] ? 1 : a < b ? -1 : 0
+        //     // }
+        // }
+        // console.log(arr.sort(sortby('age'))) //[{name: "xiaoming", age: 18},{name: "wangwu", age: 24},{name: "lisi", age: 29},{name: "zhangsan", age: 34}]
+        // // console.log(arr.sort(sortby('name',false))) //[{name: "zhangsan", age: 34},{name: "xiaoming", age: 18},{name: "wangwu", age: 24},{name: "lisi", age: 29}]
     </script>
 </body>
 

@@ -1,0 +1,148 @@
+li{
+    list-style: none;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.container_header{
+    width: 100%;
+    background-color: dodgerblue;
+}
+.header{
+    height: 8vh;
+    width: 93%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+}
+.header span{
+    font-size:5vw;
+    margin-top: 2vh;
+    color: white;
+}
+.header img{
+    width: 5vw;
+    height: 5vw;
+    color: white;
+    margin-top: 2vh;
+}
+.container_date{
+    width: 100%;
+    height: 7vh;
+    /*background-color: pink;*/
+    border-bottom: 1px solid gray;
+    display: flex;
+    justify-content: center;
+}
+.container_date .date{
+    width: 60%;
+    height: 90%;
+    display: flex;
+    margin-top: 1vh;
+    justify-content: space-between;
+    /*background-color: dodgerblue;*/
+
+}
+.container_date .date .left{
+    width: 8vw;
+    height: 8vw;
+    /*background-color: deeppink;*/
+    background-color: gainsboro;
+    border-radius: 50%;
+}
+.container_date .date .left::before{
+    content: "";
+    display: block;
+    width: 2vw;
+    height: 2vw;
+    border-left: 1vw solid white;
+    margin-top: 1vh;
+    border-bottom: 1vw solid white;
+    margin-left: 3vw;
+    transform: rotate(45deg);
+}
+.container_date .date .middle_date{
+    height: 100%;
+    font-size: 7vw;
+}
+.container_date .date .right{
+    width: 8vw;
+    background-color: gainsboro;
+    height: 8vw;
+    border-radius: 50%;
+}
+.container_date .date .right::before{
+    content: "";
+    display: block;
+    width: 2vw;
+    height: 2vw;
+    margin-left: 3vw;
+    margin-top: 3vw;
+    border-left: 1vw solid white;
+    border-bottom: 1vw solid white;
+    transform: rotate(-135deg);
+}
+.container_content{
+    width: 100%;
+    height: 120vh;
+    display: flex;
+    margin-top: 2vh;
+    justify-content: center;
+
+}
+.container_content .content{
+    width: 85%;
+    font-size: 5vw;
+    overflow: hidden;
+
+
+}
+.container_content .singleData{
+    width: 100%;
+    color: dodgerblue;
+    display: flex;
+    margin-top: 3vh;
+}
+.container_content .singleData .year{
+    width: 25%;
+}
+.container_content .singleData .separate{
+    width: .5vw;
+    background-color: gray;
+    margin-right: 2vw;
+}
+.container_content .event{
+    width: 75%;
+}
+.coverPage{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: -100vh;
+    background-color: darkgray;
+    transition: .5s;
+}
+.downPage{
+    width: 100%;
+    margin-top: -2vh;
+    position: absolute;
+    top: -40vh;
+    background-color: white;
+    transition: 0.5s;
+    order: 2;
+}
+.downPage ul{
+    width: 100%;
+    text-align: center;
+    font-size: 5vw;
+}
+.downPage ul li{
+    height: 6vh;
+    width: 100%;
+    line-height: 6vh;
+    border-bottom: 1px solid gray;
+}
