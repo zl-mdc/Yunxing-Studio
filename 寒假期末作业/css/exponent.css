@@ -1,0 +1,19 @@
+.exponent{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.exponent div {
+    display: flex;
+    width: calc(98% /3 );
+    height: 17vh;
+    /*background-color: pink;*/
+    border: 1px solid wheat;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.exponent div img{
+    background-color: #336699;
+    width: 10vw;
+}

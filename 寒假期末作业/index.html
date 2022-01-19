@@ -13,6 +13,8 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.2.2/echarts.common.js"></script>
     <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/7.4.1/swiper-bundle.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/week.css">
+    <link rel="stylesheet" href="./css/weekchart.css">
+    <link rel="stylesheet" href="./css/exponent.css">
     <!-- <style>
         .info_box {
             width: 100vw;
@@ -223,12 +225,12 @@
             display: none;
         }
     </style> -->
-    <style>
+    <!-- <style>
         * {
             margin: 0;
             padding: 0;
         }
-        
+
         html,
         body {
             height: 100%;
@@ -239,7 +241,7 @@
             display: flex;
             justify-content: center;
         }
-        
+
         .above_week div,.under_week div {
             display: flex;
             width: calc(100% / 6);
@@ -248,7 +250,7 @@
             align-items: center;
             flex-direction: column;
         }
-        
+
         .above_week div span ,.under_week div span{
             margin-top: 2vh;
         }
@@ -261,7 +263,6 @@
         .weekChart{
             width: 100vw;
             height: 15vh;
-            /*background-color: dodgerblue;*/
         }
         .under_week{
             display: flex;
@@ -280,7 +281,6 @@
             display: flex;
             width: calc(98% /3 );
             height: 17vh;
-             /*background-color: pink;*/
             border: 1px solid wheat;
             justify-content: center;
             align-items: center;
@@ -290,210 +290,355 @@
             background-color: #336699;
             width: 10vw;
         }
+    </style> -->
+    <style>
+        .contentPart {
+            display: none;
+        }
+        
+        .searchPart {
+            width: 100%;
+            height: 100%;
+            background-color: #f1f0f6;
+        }
+        
+        .inputSearch {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        .inputSearch::before {
+            content: "";
+            display: block;
+            width: 3vw;
+            height: 3vw;
+            /* background-color: black; */
+            border-top: 1vw solid red;
+            border-left: 1vw solid red;
+            transform: rotate(-45deg);
+        }
+        
+        .inputSearch input {
+            border-style: none;
+            height: 6vh;
+        }
+        
+        .currentCity {
+            color: rgba(85, 85, 85, .5);
+            font-size: 3vw;
+            margin-left: 5vw;
+            margin-top: 2vh;
+        }
+        
+        .currentCityList {
+            width: 100vw;
+            height: 14vh;
+            background-color: gray;
+            display: flex;
+            align-items: center;
+        }
+        
+        .currentCityList div {
+            width: calc(90% /3);
+            height: 5vh;
+            background-color: chartreuse;
+            border-radius: 2vw;
+            text-align: center;
+            line-height: 5vh;
+            margin-left: 5vw;
+        }
+        
+        .action {
+            display: flex;
+            width: 95%;
+            justify-content: space-between;
+            margin: 0 auto;
+            color: rgba(85, 85, 85, .5);
+        }
+        
+        .addList {
+            width: 93vw;
+            height: 14vh;
+            background-color: gray;
+            display: flex;
+            margin: 0 auto;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .addList div {
+            width: calc(90% /3);
+            height: 5vh;
+            background-color: chartreuse;
+            border-radius: 2vw;
+            text-align: center;
+            line-height: 5vh;
+            /* margin-left: 5vw; */
+        }
+        
+        .hotCity {
+            color: rgba(85, 85, 85, .5);
+            font-size: 3vw;
+            margin-left: 5vw;
+            margin-top: 2vh;
+        }
+        
+        .hotCityList {
+            width: 93vw;
+            height: 50vh;
+            background-color: gray;
+            display: flex;
+            margin: 0 auto;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: flex-start;
+        }
+        
+        .hotCityList div {
+            width: calc(90% /3);
+            height: 5vh;
+            background-color: chartreuse;
+            border-radius: 2vw;
+            text-align: center;
+            line-height: 5vh;
+            margin-top: 2vh;
+        }
     </style>
 </head>
 
 <body>
-    <div class="info_box">
-        <div class="position">
-            <div class="searchBtn">
-                <img src="./images/location.png" alt="">
-            </div>
-            <div class="city">上海市</div>
+    <div class="searchPart">
+        <div class="inputSearch">
+            <input type="text" placeholder="请输入城市名" style="width: 86%;">
         </div>
-        <div class="InformationAndTravel">
-            <div class="InformationAndTravelContent">
-                <div class="information">
-                    <div class="informationContent">
-                        <img src="./images/yiqing.png" alt=""> 疫情咨询
+        <p class="currentCity">当前城市</p>
+        <div class="currentCityList">
+            <div>沈阳市</div>
+        </div>
+        <div class="action">
+            <p class="addRecord">添加记录</p>
+            <p class="deleteRecord">删除</p>
+        </div>
+        <div class="addList">
+            <div>沈阳市</div>
+            <div>沈阳市</div>
+            <div>沈阳市</div>
+        </div>
+        <p class="hotCity">热搜城市</p>
+        <div class="hotCityList">
+            <div>北京市</div>
+            <div>北京市</div>
+            <div>北京市</div>
+            <div>北京市</div>
+            <div>北京市</div>
+            <div>北京市</div>
+            <div>北京市</div>
+        </div>
+    </div>
+    <div class="contentPart">
+        <div class="info_box">
+            <div class="position">
+                <div class="searchBtn">
+                    <img src="./images/location.png" alt="">
+                </div>
+                <div class="city">上海市</div>
+            </div>
+            <div class="InformationAndTravel">
+                <div class="InformationAndTravelContent">
+                    <div class="information">
+                        <div class="informationContent">
+                            <img src="./images/yiqing.png" alt=""> 疫情咨询
+                        </div>
+                    </div>
+                    <div class="travel">
+                        <div class="travelContent">
+                            <img src="./images/safetravel.png" alt=""> 安全出行
+                        </div>
                     </div>
                 </div>
-                <div class="travel">
-                    <div class="travelContent">
-                        <img src="./images/safetravel.png" alt=""> 安全出行
-                    </div>
+            </div>
+            <div class="weatherCondition">
+                晴
+            </div>
+            <div class="temperature">
+                8
+            </div>
+            <div class="DetailedInformation">
+                <div class="info_about">
+                    <div>北风1级，湿度57%</div>
+                    <div>天冷了，该加衣服了！</div>
                 </div>
-            </div>
-        </div>
-        <div class="weatherCondition">
-            晴
-        </div>
-        <div class="temperature">
-            8
-        </div>
-        <div class="DetailedInformation">
-            <div class="info_about">
-                <div>北风1级，湿度57%</div>
-                <div>天冷了，该加衣服了！</div>
-            </div>
-            <div class="info_api">
-                <img src="./images/liang.png" alt="">
-                <span>60良</span>
-            </div>
+                <div class="info_api">
+                    <img src="./images/liang.png" alt="">
+                    <span>60良</span>
+                </div>
 
-        </div>
-    </div>
-    <div class="days">
-        <div class="taddy">
-            <div class="above">
-                <em>今天</em>
-                <span>良</span>
-                <b>5 / 11°</b>
-            </div>
-            <div class="under">
-                <strong>晴</strong>
-                <img src="./images/taiyang.png" alt="">
             </div>
         </div>
-        <div class="tomorrow">
-            <div class="above">
-                <em>明天</em>
-                <span>良</span>
-                <b>5 / 11°</b>
+        <div class="days">
+            <div class="taddy">
+                <div class="above">
+                    <em>今天</em>
+                    <span>良</span>
+                    <b>5 / 11°</b>
+                </div>
+                <div class="under">
+                    <strong>晴</strong>
+                    <img src="./images/taiyang.png" alt="">
+                </div>
             </div>
-            <div class="under">
-                <strong>多云</strong>
-                <img src="./images/duoyun.png" alt="">
+            <div class="tomorrow">
+                <div class="above">
+                    <em>明天</em>
+                    <span>良</span>
+                    <b>5 / 11°</b>
+                </div>
+                <div class="under">
+                    <strong>多云</strong>
+                    <img src="./images/duoyun.png" alt="">
+                </div>
             </div>
         </div>
-    </div>
-    <div class="daylong">
-        <div class="tabs">
-            <strong class="sunset">日落17：16</strong>
-            <div class="active">
-                <strong class="temp" style="display: block;">温度</strong>
-                <strong class="windPower" style="display: block;margin-left: 2vw;">风力</strong>
+        <div class="daylong">
+            <div class="tabs">
+                <strong class="sunset">日落17：16</strong>
+                <div class="active">
+                    <strong class="temp" style="display: block;">温度</strong>
+                    <strong class="windPower" style="display: block;margin-left: 2vw;">风力</strong>
+                </div>
+                <em class="btn">24小时</em>
             </div>
-            <em class="btn">24小时</em>
-        </div>
-        <div class="charts">
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="lineChart"></div>
+            <div class="charts">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="lineChart"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="week">
-        <div class="above_week">
-            <div>
-                <span>周一</span>
-                <span>阴</span>
-                <img src="./images/yin.png" alt="">
+        <div class="week">
+            <div class="above_week">
+                <div>
+                    <span>周一</span>
+                    <span>阴</span>
+                    <img src="./images/yin.png" alt="">
+                </div>
+                <div>
+                    <span>周二</span>
+                    <span>阴</span>
+                    <img src="./images/yin.png" alt="">
+                </div>
+                <div>
+                    <span>周三</span>
+                    <span>阴</span>
+                    <img src="./images/yin.png" alt="">
+                </div>
+                <div>
+                    <span>周四</span>
+                    <span>阴</span>
+                    <img src="./images/yin.png" alt="">
+                </div>
+                <div>
+                    <span>周五</span>
+                    <span>阴</span>
+                    <img src="./images/yin.png" alt="">
+                </div>
+                <div>
+                    <span>周六</span>
+                    <span>阴</span>
+                    <img src="./images/yin.png" alt="">
+                </div>
             </div>
-            <div>
-                <span>周二</span>
-                <span>阴</span>
-                <img src="./images/yin.png" alt="">
+            <div class="weekChart">
             </div>
-            <div>
-                <span>周三</span>
-                <span>阴</span>
-                <img src="./images/yin.png" alt="">
-            </div>
-            <div>
-                <span>周四</span>
-                <span>阴</span>
-                <img src="./images/yin.png" alt="">
-            </div>
-            <div>
-                <span>周五</span>
-                <span>阴</span>
-                <img src="./images/yin.png" alt="">
-            </div>
-            <div>
-                <span>周六</span>
-                <span>阴</span>
-                <img src="./images/yin.png" alt="">
+            <div class="under_week">
+                <div>
+                    <img src="./images/yin.png" alt="">
+                    <span>多云</span>
+                    <span>优</span>
+                    <span>东风</span>
+                    <span>1级</span>
+                </div>
+                <div>
+                    <img src="./images/yin.png" alt="">
+                    <span>多云</span>
+                    <span>优</span>
+                    <span>东风</span>
+                    <span>1级</span>
+                </div>
+                <div>
+                    <img src="./images/yin.png" alt="">
+                    <span>多云</span>
+                    <span>优</span>
+                    <span>东风</span>
+                    <span>1级</span>
+                </div>
+                <div>
+                    <img src="./images/yin.png" alt="">
+                    <span>多云</span>
+                    <span>优</span>
+                    <span>东风</span>
+                    <span>1级</span>
+                </div>
+                <div>
+                    <img src="./images/yin.png" alt="">
+                    <span>多云</span>
+                    <span>优</span>
+                    <span>东风</span>
+                    <span>1级</span>
+                </div>
+                <div>
+                    <img src="./images/yin.png" alt="">
+                    <span>多云</span>
+                    <span>优</span>
+                    <span>东风</span>
+                    <span>1级</span>
+                </div>
             </div>
         </div>
-        <div class="weekChart">
-        </div>
-        <div class="under_week">
+        <div class="exponent">
             <div>
-                <img src="./images/yin.png" alt="">
-                <span>多云</span>
-                <span>优</span>
-                <span>东风</span>
-                <span>1级</span>
+                <img src="./images/default.png">
+                <span>约会 较适宜</span>
             </div>
             <div>
-                <img src="./images/yin.png" alt="">
-                <span>多云</span>
-                <span>优</span>
-                <span>东风</span>
-                <span>1级</span>
+                <img src="./images/default.png">
+                <span>约会 较适宜</span>
             </div>
             <div>
-                <img src="./images/yin.png" alt="">
-                <span>多云</span>
-                <span>优</span>
-                <span>东风</span>
-                <span>1级</span>
+                <img src="./images/default.png">
+                <span>约会 较适宜</span>
             </div>
             <div>
-                <img src="./images/yin.png" alt="">
-                <span>多云</span>
-                <span>优</span>
-                <span>东风</span>
-                <span>1级</span>
+                <img src="./images/default.png">
+                <span>约会 较适宜</span>
             </div>
             <div>
-                <img src="./images/yin.png" alt="">
-                <span>多云</span>
-                <span>优</span>
-                <span>东风</span>
-                <span>1级</span>
+                <img src="./images/default.png">
+                <span>约会 较适宜</span>
             </div>
             <div>
-                <img src="./images/yin.png" alt="">
-                <span>多云</span>
-                <span>优</span>
-                <span>东风</span>
-                <span>1级</span>
+                <img src="./images/default.png">
+                <span>约会 较适宜</span>
             </div>
-        </div>
-    </div>
-    <div class="exponent">
-        <div>
-            <img src="./images/default.png">
-            <span>约会 较适宜</span>
-        </div>
-        <div>
-            <img src="./images/default.png">
-            <span>约会 较适宜</span>
-        </div>
-        <div>
-            <img src="./images/default.png">
-            <span>约会 较适宜</span>
-        </div>
-        <div>
-            <img src="./images/default.png">
-            <span>约会 较适宜</span>
-        </div>
-        <div>
-            <img src="./images/default.png">
-            <span>约会 较适宜</span>
-        </div>
-        <div>
-            <img src="./images/default.png">
-            <span>约会 较适宜</span>
-        </div>
-        <div>
-            <img src="./images/default.png">
-            <span>约会 较适宜</span>
-        </div>
-        <div>
-            <img src="./images/default.png">
-            <span>约会 较适宜</span>
+            <div>
+                <img src="./images/default.png">
+                <span>约会 较适宜</span>
+            </div>
+            <div>
+                <img src="./images/default.png">
+                <span>约会 较适宜</span>
+            </div>
         </div>
     </div>
     <script>
-        let weekChart =document.querySelector('.weekChart')
-        let Chart=echarts.init(weekChart)
-        let option={
+        let weekChart = document.querySelector('.weekChart')
+        let Chart = echarts.init(weekChart)
+        let option = {
             xAxis: {
                 type: 'category',
                 axisLine: {
@@ -522,24 +667,21 @@
                     show: false
                 }
             },
-            series: [
-                {
-                    name: 'Highest',
-                    type: 'line',
-                    data: [10, 11, 13, 11, 12, 12]
-                },
-                {
-                    name: 'Lowest',
-                    type: 'line',
-                    data: [1, -2, 2, 5, 3, 2]
-                }
-            ],
-            grid:{
-                x:0,
-                y:0,
+            series: [{
+                name: 'Highest',
+                type: 'line',
+                data: [10, 11, 13, 11, 12, 12]
+            }, {
+                name: 'Lowest',
+                type: 'line',
+                data: [1, -2, 2, 5, 3, 2]
+            }],
+            grid: {
+                x: 0,
+                y: 0,
                 //
-                y2:0,
-                x2:0
+                y2: 0,
+                x2: 0
 
             }
         };
