@@ -1,0 +1,119 @@
+.contentPart {
+    display: none;
+}
+
+.searchPart {
+    width: 100%;
+    height: 100%;
+    background-color: #f1f0f6;
+    display: block;
+}
+
+.inputSearch {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.inputSearch::before {
+    content: "";
+    display: block;
+    width: 3vw;
+    height: 3vw;
+    /* background-color: black; */
+    border-top: 1vw solid #86909c;
+    border-left: 1vw solid #86909c;
+    transform: rotate(-45deg);
+}
+
+.inputSearch input {
+    border-style: none;
+    height: 6vh;
+}
+
+.currentCity {
+    color: rgba(85, 85, 85, .5);
+    font-size: 3vw;
+    margin-left: 5vw;
+    margin-top: 2vh;
+}
+
+.currentCityList {
+    width: 100vw;
+    height: 14vh;
+    background-color: #f4f5f5;
+    display: flex;
+    align-items: center;
+}
+
+.currentCityList div {
+    width: calc(90% /3);
+    height: 5vh;
+    background-color: white;
+    color: #4e5969;
+    border-radius: 2vw;
+    text-align: center;
+    line-height: 5vh;
+    margin-left: 5vw;
+}
+
+.action {
+    display: flex;
+    width: 95%;
+    justify-content: space-between;
+    margin: 0 auto;
+    color: rgba(85, 85, 85, .5);
+}
+
+.addList {
+    width: 93vw;
+    /* height: 8vh; */
+    background-color: #f4f5f5;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.addList div {
+    width: calc(90% /3);
+    height: 5vh;
+    background-color: white;
+    color: #4e5969;
+    border-radius: 2vw;
+    text-align: center;
+    line-height: 5vh;
+    margin-top: 2vh;
+    /* margin-left: 5vw; */
+}
+
+.hotCity {
+    color: rgba(85, 85, 85, .5);
+    font-size: 3vw;
+    margin-left: 5vw;
+    margin-top: 2vh;
+}
+
+.hotCityList {
+    width: 93vw;
+    height: 50vh;
+    background-color: #f4f5f5;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+}
+
+.hotCityList div {
+    width: calc(90% /3);
+    height: 5vh;
+    background-color: white;
+    color: #4e5969;
+    border-radius: 2vw;
+    text-align: center;
+    line-height: 5vh;
+    margin-top: 2vh;
+}
