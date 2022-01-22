@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/normalize/8.0.1/normalize.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/info.css">
+    <link rel="stylesheet" href="./css/days.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.24.0/axios.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/7.4.1/swiper-bundle.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.2.2/echarts.common.js"></script>
+    <script src="./api/service.js"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/7.4.1/swiper-bundle.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/week.css">
+    <link rel="stylesheet" href="./css/weekchart.css">
+    <link rel="stylesheet" href="./css/exponent.css">
+    <link rel="stylesheet" href="./css/searchPart.css">
+    <link rel="stylesheet" href="./css/cover.css">
+</head>
+
+<body>
+    <div class="searchPart">
+        <div class="inputSearch">
+            <div class="back"></div>
+            <input type="text" placeholder="请输入城市名" style="width: 86%;" class="input">
+        </div>
+        <p class="currentCity">当前城市</p>
+        <div class="currentCityList"></div>
+        <div class="action">
+            <p class="addRecord">添加记录</p>
+            <p class="deleteRecord">删除</p>
+        </div>
+        <div class="addList"></div>
+        <p class="hotCity">热搜城市</p>
+        <div class="hotCityList"></div>
+    </div>
+    <div class="cover_above"></div>
+    <div class="cover_under"></div>
+    <div class="contentPart">
+        <div class="info_box">
+            <div class="position"></div>
+            <div class="InformationAndTravel">
+                <div class="InformationAndTravelContent">
+                    <div class="information">
+                        <div class="informationContent">
+                            <img src="./images/yiqing.png" alt=""> 疫情咨询
+                        </div>
+                    </div>
+                    <div class="travel">
+                        <div class="travelContent">
+                            <img src="./images/safetravel.png" alt=""> 安全出行
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="background ">
+                <img src="./images/building_night.png" alt="">
+            </div>
+            <div class="infoContent"></div>
+        </div>
+        <div class="background "></div>
+        <div class="days">
+            <div class="taddy"></div>
+            <div class="tomorrow"></div>
+        </div>
+        <div class="daylong">
+            <div class="tabs">
+                <strong class="sunset">日落17：16</strong>
+                <div class="active">
+                    <strong class="temp" style="display: block;">温度</strong>
+                    <strong class="windPower" style="display: block;margin-left: 2vw;">风力</strong>
+                </div>
+                <em class="btn">24小时</em>
+            </div>
+            <div class="charts">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="lineChart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="week">
+            <div class="above_week"></div>
+            <div class="weekChart"></div>
+            <div class="under_week"></div>
+        </div>
+        <div class="exponent"></div>
+    </div>
+    <script src="./js/position.js"></script>
+    <script src="./js/weekchart_low.js"></script>
+    <script src="./js/weekchart_above.js"></script>
+    <script src="./js/todayAndTomorrow.js"></script>
+    <script src="./js/exponent.js"></script>
+    <script src="./js/week.js"></script>
+    <script src="./js//exponent.js"></script>
+    <script src="./js/searchPart.js"></script>
+    <script src="./js/info.js"></script>
+    <script src="./js/weekchart.js"></script>
+    <script src="./js/swiper.js"></script>
+    <script src="./js/dayecharts.js"></script>
+
+</body>
+
+</html>

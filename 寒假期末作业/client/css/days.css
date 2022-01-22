@@ -1,0 +1,41 @@
+.days {
+    display: flex;
+    /* border-bottom: 1px solid red; */
+    /* background: center no-repeat url(../images/building_night.png);
+    background-size: 100% 200vh; */
+    color: white;
+}
+
+.days img {
+    width: 8vw;
+    margin-right: 3vw;
+}
+
+.days b {
+    float: right;
+    margin-right: 3vw;
+}
+
+.days strong {
+    margin-left: 3vw;
+}
+
+.taddy {
+    width: 50%;
+    /* border-right: 1px solid red; */
+}
+
+.under {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1vh;
+}
+
+.above {
+    margin-left: 3vw;
+}
+
+.tomorrow {
+    width: 50%;
+}
